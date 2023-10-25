@@ -1,0 +1,366 @@
+{
+   "openapi":"3.0.1",
+   "info":{
+      "title":"Game Analytics Service",
+      "description":"FSB Game Anlytics REST APIs",
+      "contact":{
+         "name":"FSB",
+         "url":"https://fsb.com/",
+         "email":"contacts@fsb.com"
+      },
+      "version":"v1.0"
+   },
+   "servers":[
+      {
+         "url":"http://localhost:8090/",
+         "description":"Local Server"
+      }
+   ],
+   "paths":{
+      "/game-analytics/v1/api/game/{gameId}":{
+         "put":{
+            "tags":[
+               "Game CRUD APIs"
+            ],
+            "summary":"Update existing game Object",
+            "description":"Update existing game Object",
+            "operationId":"schedulerConfigTime",
+            "parameters":[
+               {
+                  "name":"gameId",
+                  "in":"path",
+                  "required":true,
+                  "schema":{
+                     "type":"string"
+                  }
+               }
+            ],
+            "requestBody":{
+               "content":{
+                  "application/json":{
+                     "schema":{
+                        "$ref":"#/components/schemas/Game"
+                     }
+                  }
+               },
+               "required":true
+            },
+            "responses":{
+               "200":{
+                  "description":"Success",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/Game"
+                        }
+                     }
+                  }
+               },
+               "400":{
+                  "description":"Bad Request",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "403":{
+                  "description":"Forbidden",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "500":{
+                  "description":"Server Error",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               }
+            }
+         },
+         "delete":{
+            "tags":[
+               "Game CRUD APIs"
+            ],
+            "summary":"Delete Exiting Game Object",
+            "description":"Delete Exiting Game Object",
+            "operationId":"schedulerConfigTime_3",
+            "parameters":[
+               {
+                  "name":"gameId",
+                  "in":"path",
+                  "required":true,
+                  "schema":{
+                     "type":"string"
+                  }
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"Success",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/Game"
+                        }
+                     }
+                  }
+               },
+               "404":{
+                  "description":"Not Found",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "403":{
+                  "description":"Forbidden",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "500":{
+                  "description":"Server Error",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "/game-analytics/v1/api/game":{
+         "post":{
+            "tags":[
+               "Game CRUD APIs"
+            ],
+            "summary":"Create new Game Object",
+            "description":"Create new Game Object",
+            "operationId":"schedulerConfigTime_1",
+            "requestBody":{
+               "content":{
+                  "application/json":{
+                     "schema":{
+                        "$ref":"#/components/schemas/Game"
+                     }
+                  }
+               },
+               "required":true
+            },
+            "responses":{
+               "201":{
+                  "description":"Success",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/Game"
+                        }
+                     }
+                  }
+               },
+               "400":{
+                  "description":"Bad Request",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "403":{
+                  "description":"Forbidden",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "500":{
+                  "description":"Server Error",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "/game-analytics/v1/api/game/{gameName}":{
+         "get":{
+            "tags":[
+               "Game CRUD APIs"
+            ],
+            "summary":"Get Game Object by gameId",
+            "description":"Get Game Object by gameId",
+            "operationId":"schedulerConfigTime_2",
+            "parameters":[
+               {
+                  "name":"gameName",
+                  "in":"path",
+                  "required":true,
+                  "schema":{
+                     "type":"string"
+                  }
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"Success",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/Game"
+                        }
+                     }
+                  }
+               },
+               "404":{
+                  "description":"Not Found Request",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "403":{
+                  "description":"Forbidden",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               },
+               "500":{
+                  "description":"Server Error",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/ErrorResponseDto"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "components":{
+      "schemas":{
+         "Game":{
+            "required":[
+               "description",
+               "name"
+            ],
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string"
+               },
+               "name":{
+                  "type":"string",
+                  "description":"Name of the Game",
+                  "example":"#game1"
+               },
+               "status":{
+                  "type":"string",
+                  "description":"Operational Status of game",
+                  "format":"uuid"
+               },
+               "description":{
+                  "type":"string",
+                  "description":"description of the Game",
+                  "example":"#description"
+               }
+            }
+         },
+         "ErrorResponseDto":{
+            "type":"object",
+            "properties":{
+               "errorCode":{
+                  "type":"string",
+                  "description":"errorCode of error",
+                  "example":"OBJECT_NOT_FOUND"
+               },
+               "errorMessage":{
+                  "type":"string",
+                  "description":"errorMessage of error",
+                  "example":"object not found"
+               },
+               "status":{
+                  "type":"string",
+                  "description":"http status of error",
+                  "example":"403/404/409/500"
+               },
+               "errors":{
+                  "type":"array",
+                  "description":"validation errors",
+                  "items":{
+                     "$ref":"#/components/schemas/InvalidParameterDto"
+                  }
+               },
+               "timestamp":{
+                  "type":"string",
+                  "description":"time at which error occured",
+                  "format":"date-time"
+               }
+            }
+         },
+         "InvalidParameterDto":{
+            "type":"object",
+            "properties":{
+               "errorField":{
+                  "type":"string",
+                  "description":"errorField of invalid error",
+                  "example":"id"
+               },
+               "errorCode":{
+                  "type":"string",
+                  "description":"errorCode of invalid error",
+                  "example":"OBJECT_NOT_DEFINED"
+               },
+               "errorMessage":{
+                  "type":"string",
+                  "description":"errorMessage of invalid error",
+                  "example":"id is mandatory"
+               }
+            },
+            "description":"validation errors",
+            "anyOf":[
+               {
+                  "$ref":"#/components/schemas/InvalidParameterDto"
+               }
+            ]
+         }
+      }
+   }
+}
